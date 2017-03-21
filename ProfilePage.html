@@ -9,6 +9,7 @@
         </div>
     </body>
     <script>
-     document.getElementById('#responseContainer').value = JSON.stringify(resp);
+        var retrievedObject = localStorage.getItem('Cred');
+        document.getElementById('#responseContainer').value = JSON.parse(retrievedObject);
     </script>
 </html>
