@@ -32,9 +32,8 @@
     gapi.client.load('plus', 'v1', apiClientLoaded);
   }
 
-  /**
-   * Sets up an API call after the Google API client loads.
-   */
+  
+  /*Calls handleEmailResponse after Google Api client loads*/
   function apiClientLoaded() {
     gapi.client.plus.people.get({userId: 'me'}).execute(handleEmailResponse);
   }
@@ -46,9 +45,11 @@
    */
   function handleEmailResponse(resp) {
     var primaryEmail;
+    /*Retrieves Primary Email*/
     for (var i=0; i < resp.emails.length; i++) {
       if (resp.emails[i].type === 'account') primaryEmail = resp.emails[i].value;
     }
+   
     document.getElementById('responseContainer').value = 'Primary email: ' +
         primaryEmail + '\n\nFull Response:\n' + JSON.stringify(resp);
   }
