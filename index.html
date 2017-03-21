@@ -50,10 +50,10 @@
       if (resp.emails[i].type === 'account') primaryEmail = resp.emails[i].value;
     }
    
-    document.getElementById('responseContainer').value = 'Primary email: ' +
-        primaryEmail + '\n\nFull Response:\n' + JSON.stringify(resp);
-    
-        //window.location.href = "ProfilePage.html";
+        document.getElementById('responseContainer').value = 'Primary email: ' + primaryEmail + '\n\nFull Response:\n' + JSON.stringify(resp);
+        // Put the object into storage
+        localStorage.setItem('Cred', JSON.stringify(resp));
+        window.location.href = "ProfilePage.html";
   }
     
 
