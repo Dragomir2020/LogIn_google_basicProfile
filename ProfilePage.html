@@ -9,7 +9,9 @@
         </div>
     </body>
     <script>
+        document.onload = function(){
         var retrievedObject = localStorage.getItem('Cred');
         document.getElementById('#responseContainer').value = "hello";JSON.parse(retrievedObject);
+        };
     </script>
 </html>
