@@ -8,10 +8,28 @@
         <div id="responseContainer">
         </div>
     </body>
-    <script>
+     <!-- jQuery CDN -->
+        <script   src="http://code.jquery.com/jquery-3.1.1.js"   integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="   crossorigin="anonymous"></script>
+        <script>
+             $(document).ready(function(){
+                 var response = localStorage.getItem('Cred');
+                 var hello = JSON.parse(response);
+                 var gender = hello.gender;
+                 var image_url = hello.image.url;
+                 var displayName = hello.displayName;
+                 var email = hello.emails[0].value;
+       
+                 $('#responseContainer').append(gender + image_url + displayName + email);
+                 //$('#profile-left').append('<h4>' + gender + '</h4>');
+                 //$('#profile-right').append('<h1>' + displayName + '</h1>');
+                 //$('#profile-right').append('<h4>' + email + '</h4>');
+                 
+             });
+                 
+                 /*
         document.onload = function(){
         var retrievedObject = window.localStorage.getItem('Cred');
         document.getElementById('#responseContainer').value = "hello";JSON.parse(retrievedObject);
-        };
+        };*/
     </script>
 </html>
